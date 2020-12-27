@@ -5,6 +5,12 @@ ro.vendor.pq.mtk_aal_support=1
 # ADB
 persist.adb.nonblocking_ffs=0
 
+# ADB on boot
+persist.service.adb.enable=1
+persist.service.debuggable=1
+persist.sys.usb.config=mtp,adb
+ro.adb.secure=0
+
 # AEE
 ro.vendor.aee.convert64=0
 ro.vendor.have_aeev_feature=0
