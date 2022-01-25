@@ -96,6 +96,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     audio.bluetooth.default \
+    android.hardware.bluetooth@1.1.vendor \
     libbluetooth_audio_session
 
 # Boot Control
