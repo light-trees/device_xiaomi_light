@@ -8,7 +8,7 @@
 
 set -e
 
-DEVICE=everpal
+DEVICE=light
 VENDOR=xiaomi
 
 # Load extract_utils and do some sanity checks

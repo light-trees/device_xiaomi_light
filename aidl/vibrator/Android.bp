@@ -2,7 +2,7 @@
 // SPDX-License-Identifer: Apache-2.0
 
 cc_library_static {
-    name: "libvibratoreverpalimpl",
+    name: "libvibratorlightimpl",
     vendor: true,
     shared_libs: [
         "libbase",
@@ -25,10 +25,10 @@ cc_library_static {
 }
 
 cc_binary {
-    name: "android.hardware.vibrator-service.everpal",
+    name: "android.hardware.vibrator-service.light",
     relative_install_path: "hw",
-    init_rc: ["vibrator-everpal.rc"],
-    vintf_fragments: ["vibrator-everpal.xml"],
+    init_rc: ["vibrator-light.rc"],
+    vintf_fragments: ["vibrator-light.xml"],
     vendor: true,
     shared_libs: [
         "libbase",
@@ -36,7 +36,7 @@ cc_binary {
         "android.hardware.vibrator-V2-ndk",
     ],
     static_libs: [
-        "libvibratoreverpalimpl",
+        "libvibratorlightimpl",
     ],
     srcs: ["main.cpp"],
 }

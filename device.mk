@@ -11,7 +11,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
 # Inherit the proprietary files
-$(call inherit-product, vendor/xiaomi/everpal/everpal-vendor.mk)
+$(call inherit-product, vendor/xiaomi/light/light-vendor.mk)
 
 # Project ID Quota
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
@@ -234,7 +234,7 @@ PRODUCT_PACKAGES += \
 
 # Light
 PRODUCT_PACKAGES += \
-    android.hardware.light-service.everpal
+    android.hardware.light-service.light
 
 # Media
 PRODUCT_PACKAGES += \
@@ -403,26 +403,22 @@ PRODUCT_PACKAGES += \
 
 # Recovery
 PRODUCT_COPY_FILES += \
-    vendor/xiaomi/everpal/proprietary/vendor/firmware/mt6631_fm_v1_coeff.bin:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/mt6631_fm_v1_coeff.bin \
-    vendor/xiaomi/everpal/proprietary/vendor/firmware/mt6631_fm_v1_patch.bin:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/mt6631_fm_v1_patch.bin \
-    vendor/xiaomi/everpal/proprietary/vendor/firmware/mt6635_fm_v1_coeff.bin:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/mt6635_fm_v1_coeff.bin \
-    vendor/xiaomi/everpal/proprietary/vendor/firmware/mt6635_fm_v1_patch.bin:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/mt6635_fm_v1_patch.bin \
-    vendor/xiaomi/everpal/proprietary/vendor/firmware/novatek_ts_ct_fw.bin:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/novatek_ts_ct_fw.bin \
-    vendor/xiaomi/everpal/proprietary/vendor/firmware/novatek_ts_ct_mp.bin:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/novatek_ts_ct_mp.bin \
-    vendor/xiaomi/everpal/proprietary/vendor/firmware/novatek_ts_fw.bin:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/novatek_ts_fw.bin \
-    vendor/xiaomi/everpal/proprietary/vendor/firmware/novatek_ts_mp.bin:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/novatek_ts_mp.bin
+    vendor/xiaomi/light/proprietary/vendor/firmware/mt6631_fm_v1_coeff.bin:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/mt6631_fm_v1_coeff.bin \
+    vendor/xiaomi/light/proprietary/vendor/firmware/mt6631_fm_v1_patch.bin:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/mt6631_fm_v1_patch.bin \
+    vendor/xiaomi/light/proprietary/vendor/firmware/mt6635_fm_v1_coeff.bin:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/mt6635_fm_v1_coeff.bin \
+    vendor/xiaomi/light/proprietary/vendor/firmware/mt6635_fm_v1_patch.bin:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/mt6635_fm_v1_patch.bin \
 
 # Runtime Resource (RRO) Overlays
 PRODUCT_PACKAGES += \
-    ApertureOverlayEverpal \
-    ApertureQRScannerOverlayEverpal \
-    CarrierConfigOverlayEverpal \
-    FrameworksResOverlayEverpal \
-    SettingsOverlayEverpal \
-    SystemUIOverlayEverpal \
-    TelephonyOverlayEverpal \
-    TetheringConfigOverlayEverpal \
-    WifiOverlayEverpal
+    ApertureOverlayLight \
+    ApertureQRScannerOverlayLight \
+    CarrierConfigOverlayLight \
+    FrameworksResOverlayLight \
+    SettingsOverlayLight \
+    SystemUIOverlayLight \
+    TelephonyOverlayLight \
+    TetheringConfigOverlayLight \
+    WifiOverlayLight
 
 # Screen Resolution
 TARGET_SCREEN_HEIGHT := 2400
@@ -474,17 +470,18 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator-service.everpal
+    android.hardware.vibrator-service.light
 
 # VNDK
-PRODUCT_PACKAGES += \
-    libcrypto-v32 \
-    libhidlbase-v32 \
-    libutils-v32
-
+PRODUCT_COPY_FILES += \
+    prebuilts/vndk/v32/arm64/arch-arm-armv8-a/shared/vndk-sp/libutils.so:$(TARGET_COPY_OUT_VENDOR)/lib/libutils-v32.so \
+    prebuilts/vndk/v32/arm64/arch-arm64-armv8-a/shared/vndk-sp/libutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libutils-v32.so \
+    prebuilts/vndk/v32/arm64/arch-arm64-armv8-a/shared/vndk-sp/libhidlbase.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libhidlbase-v32.so \
+    prebuilts/vndk/v32/arm64/arch-arm64-armv8-a/shared/vndk-core/libcrypto.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcrypto-v32.so
+    
 # WiFi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service-lazy.everpal \
+    android.hardware.wifi@1.0-service-lazy.light \
     hostapd \
     wpa_supplicant
 

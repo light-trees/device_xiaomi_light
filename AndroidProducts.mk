@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_everpal.mk
+    $(LOCAL_DIR)/aosp_light.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_everpal-user \
-    aosp_everpal-userdebug \
-    aosp_everpal-eng
+    aosp_light-user \
+    aosp_light-userdebug \
+    aosp_light-eng
