@@ -3614,7 +3614,6 @@ vendor/lib/hw/libSoftGatekeeper.so
 vendor/lib/mt6833/libaiselector.so
 vendor/lib/mt6833/libdpframework.so
 vendor/lib/mt6833/libpq_prot.so
-vendor/lib/soundfx/libhapticgenerator.so
 vendor/lib/AVCSecureVdecCA.so
 vendor/lib/HEVCSecureVdecCA.so
 vendor/lib/VP9SecureVdecCA.so
@@ -3932,7 +3931,6 @@ vendor/lib64/mt6833/libaiselector.so
 vendor/lib64/mt6833/libdpframework.so
 vendor/lib64/mt6833/libnir_neon_driver.so
 vendor/lib64/mt6833/libpq_prot.so
-vendor/lib64/soundfx/libhapticgenerator.so
 vendor/lib64/APUWareUtilsServer.so
 vendor/lib64/VP9SecureVdecCA.so
 vendor/lib64/ese_client.so
