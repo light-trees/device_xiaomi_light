@@ -2523,7 +2523,6 @@ vendor/lib64/vendor.xiaomi.hardware.vsimapp@1.0.so
 # Misc
 vendor/bin/hw/mtkfusionrild
 vendor/bin/hw/tetheroffloadservice
-vendor/bin/hw/vendor.xiaomi.hardware.displayfeature@1.0-service
 vendor/bin/hw/vtservice_hidl
 vendor/bin/AgentTest
 vendor/bin/atcid
@@ -2654,7 +2653,6 @@ vendor/etc/init/networksetting.rc
 vendor/etc/init/nvram_daemon.rc
 vendor/etc/init/panelcolor.rc
 vendor/etc/init/tetheroffloadservice.rc
-vendor/etc/init/vendor.xiaomi.hardware.displayfeature@1.0-service.rc
 vendor/etc/init/vendor_flash_recovery.rc
 vendor/etc/init/volte_clientapi_ua.rc
 vendor/etc/init/volte_rcs_ua.rc
@@ -3659,10 +3657,8 @@ vendor/etc/virtual-spn-conf-by-efpnn.xml
 vendor/etc/virtual-spn-conf-by-efspn.xml
 vendor/etc/virtual-spn-conf-by-imsi.xml
 vendor/etc/wfd_source_capability.csv
-vendor/lib/hw/displayfeature.default.so
 vendor/lib/hw/kmsetkey.beanpod.so
 vendor/lib/hw/libSoftGatekeeper.so
-vendor/lib/hw/vendor.xiaomi.hardware.displayfeature@1.0-impl.so
 vendor/lib/mt6833/libaiselector.so
 vendor/lib/mt6833/libdpframework.so
 vendor/lib/mt6833/libnir_neon_driver.so
@@ -3858,11 +3854,8 @@ vendor/lib/sc202cs_ofilm_depth_mipi_raw_13M_tuning.so
 vendor/lib/sc202cs_ofilm_depth_mipi_raw_india_tuning.so
 vendor/lib/sc202cs_ofilm_depth_mipi_raw_tuning.so
 vendor/lib/shared-file-region-aidl-cpp.so
-vendor/lib/vendor.xiaomi.hardware.displayfeature@1.0.so
-vendor/lib64/hw/displayfeature.default.so
 vendor/lib64/hw/kmsetkey.beanpod.so
 vendor/lib64/hw/libSoftGatekeeper.so
-vendor/lib64/hw/vendor.xiaomi.hardware.displayfeature@1.0-impl.so
 vendor/lib64/mt6833/libaiselector.so
 vendor/lib64/mt6833/libdpframework.so
 vendor/lib64/mt6833/libnir_neon_driver.so
@@ -4145,7 +4138,6 @@ vendor/lib64/sc202cs_ofilm_depth_mipi_raw_india_tuning.so
 vendor/lib64/sc202cs_ofilm_depth_mipi_raw_tuning.so
 vendor/lib64/shared-file-region-aidl-cpp.so
 vendor/lib64/vendor.mediatek.hardware.apuware.utils@2.0.so
-vendor/lib64/vendor.xiaomi.hardware.displayfeature@1.0.so
 vendor/lib64/wechat.beanpod.so
 -vendor/priv-app/GpuGameDriver.mt6833/GpuGameDriver.mt6833.apk
 vendor/res/images/lcd_test_00.png
