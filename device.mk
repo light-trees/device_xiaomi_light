@@ -379,6 +379,7 @@ PRODUCT_COPY_FILES += \
 
 # Runtime Resource (RRO) Overlays
 PRODUCT_PACKAGES += \
+<<<<<<< HEAD
     ApertureOverlayLight \
     ApertureQRScannerOverlayLight \
     CarrierConfigOverlayLight \
@@ -388,6 +389,15 @@ PRODUCT_PACKAGES += \
     TelephonyOverlayLight \
     TetheringConfigOverlayLight \
     WifiOverlayLight
+=======
+    CarrierConfigOverlayCamellia \
+    FrameworksResOverlayCamellia \
+    SettingsOverlayCamellia \
+    SystemUIOverlayCamellia \
+    TelephonyOverlayCamellia \
+    TetheringConfigOverlayCamellia \
+    WifiOverlayCamellia
+>>>>>>> e52f1f5 (camellia: overlay: Enable smooth display with 90Hz)
 
 # Screen Resolution
 TARGET_SCREEN_HEIGHT := 2400
