@@ -3603,7 +3603,6 @@ vendor/etc/AbnormalDisplayLog_dynamic.xml
 vendor/etc/AudioLog_dynamic.xml
 vendor/etc/MNL_Config.xml
 vendor/etc/VideoLog_dynamic.xml
-vendor/etc/aurisys_config.xml
 vendor/etc/cgroups.json
 vendor/etc/dsi_panel_k7_38_0c_0a_fhdp_video_mi.xml
 vendor/etc/dsi_panel_k7_44_06_0b_fhdp_video_mi.xml
