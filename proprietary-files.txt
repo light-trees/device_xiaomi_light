@@ -2356,6 +2356,8 @@ vendor/lib/libvsim.so
 # Sensors
 vendor/lib64/hw/sensors.mt6833.so
 vendor/lib64/libsensor_custom.so
+vendor/lib/libsensorndkbridge.so
+vendor/lib64/libsensorndkbridge.so
 
 # Soter
 -vendor/app/SoterService/SoterService.apk:system_ext/app/SoterService/SoterService.apk
