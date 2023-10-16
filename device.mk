@@ -227,7 +227,7 @@ PRODUCT_PACKAGES += \
 
 # Light
 PRODUCT_PACKAGES += \
-    android.hardware.light-service.light
+    android.hardware.light-service.xiaomi
 
 # Media
 PRODUCT_PACKAGES += \
