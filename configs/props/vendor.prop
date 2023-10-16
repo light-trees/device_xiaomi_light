@@ -349,3 +349,5 @@ ro.vendor.wifi.sap.interface=ap0
 ro.vendor.wlan.chrdev=wmt_chrdev_wifi
 ro.vendor.wlan.gen=gen4m
 ro.vendor.wlan.standalone.log=y
+
+import /vendor/etc/properties/${ro.boot.product.hardware.sku}.prop
