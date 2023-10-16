@@ -879,18 +879,6 @@
         <item>9,1</item>
     </string-array>
 
-    <!-- Applications which are disabled unless matching a particular sku -->
-    <string-array name="config_disableApksUnlessMatchedSku_apk_list" translatable="false">
-        <item>com.android.nfc</item>
-	<item>com.android.se</item>
-        <item>com.android.apps.tag</item>
-        <item>com.google.android.tag</item>
-    </string-array>
-    <string-array name="config_disableApkUnlessMatchedSku_skus_list" translatable="false">
-        <item>evergreen</item>
-	<item>opal</item>
-    </string-array>
-
     <!-- Remove MTK IMS app from privacy (location) indicators -->
     <string name="config_systemAudioIntelligence" translatable="false">com.mediatek.ims</string>
 
