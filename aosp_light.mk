@@ -23,7 +23,9 @@ PRODUCT_NAME := aosp_light
 PRODUCT_DEVICE := light
 PRODUCT_MANUFACTURER := xiaomi
 PRODUCT_BRAND := Redmi
-PRODUCT_MODEL := light
 
 # Build info
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+BUILD_FINGERPRINT := "google/redfin/redfin:13/TQ3A.230901.001/10750268:user/release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRIVATE_BUILD_DESC="redfin-user 13 TQ3A.230901.001 10750268 release-keys"
