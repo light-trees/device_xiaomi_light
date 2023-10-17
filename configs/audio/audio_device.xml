@@ -55,7 +55,6 @@
             <kctl name="HPR Mux" value="Open" />
         </path>
         <!--external_speaker output-->
-       <!--L19 code for HQ-161023 by zhangpeng at 2021/10/21 start-->
         <path name="ext_speaker_output" value="turnon">
             <kctl name="Ext_Speaker_Amp Switch" value="1" />
             <kctl name="SpkrLeft Sia81xx Audio Scene" value="Playback" />
@@ -67,7 +66,6 @@
             <kctl name="SpkrLeft Sia81xx Power" value="Off" />
             <kctl name="aw87xxx_profile_switch_0" value="Off" />
         </path>
-       <!--L19 code for HQ-161023 by zhangpeng at 2021/10/21 end-->
         <!--mic setting-->
         <path name="builtin_Mic_Mic1" value="turnon">
             <kctl name="MISO0_MUX" value="UL1_CH1" />
@@ -1011,11 +1009,11 @@
         </path>
         <path name="SPK_INIT" value="turnon">
             <kctl name="I2S1_HD_Mux" value="Low_Jitter" />
-            <kctl name="I2S1_Out_Mux" value="Output_Widget" />
+            <kctl name="I2S1_Out_Mux" value="Dummy_Widget" />
             <kctl name="I2S3_HD_Mux" value="Low_Jitter" />
-            <kctl name="I2S3_Out_Mux" value="Output_Widget" />
+            <kctl name="I2S3_Out_Mux" value="Dummy_Widget" />
             <kctl name="I2S5_HD_Mux" value="Low_Jitter" />
-            <kctl name="I2S5_Out_Mux" value="Output_Widget" />
+            <kctl name="I2S5_Out_Mux" value="Dummy_Widget" />
         </path>
         <path name="SPK_INIT" value="turnoff">
             <kctl name="I2S1_Out_Mux" value="Normal" />
@@ -1279,7 +1277,7 @@
             <kctl name="UL6_CH1 DL6_CH1" value="0" />
             <kctl name="UL6_CH2 DL6_CH2" value="0" />
         </path>
-        <path name="PLAYBACK4_TO_CAPTURE6" value="turnoff">
+        <path name="PLAYBACK4_TO_CAPTURE6" value="turnon">
             <kctl name="UL6_CH1 DL4_CH1" value="1" />
             <kctl name="UL6_CH2 DL4_CH2" value="1" />
         </path>
