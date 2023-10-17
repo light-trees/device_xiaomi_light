@@ -72,6 +72,7 @@
      This file is used to declare the multimedia profiles and capabilities
      on an android-powered device.
 -->
+<!--L19 code for 162636 by p-zhangyuhang3 at 11.16 start-->
 <MediaSettings>
     <!-- Each camcorder profile defines a set of predefined configuration parameters -->
     <CamcorderProfiles cameraId="0">
@@ -831,6 +832,28 @@
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
+        <EncoderProfile quality="1080p" fileFormat="mp4" duration="30">
+            <Video codec="h264"
+                   bitRate="20000000"
+                   width="1920"
+                   height="1080"
+                   frameRate="30" />
+            <Audio codec="aac"
+                   bitRate="256000"
+                   sampleRate="48000"
+                   channels="2" />
+        </EncoderProfile>
+        <EncoderProfile quality="qhd" fileFormat="mp4" duration="30">
+            <Video codec="h264"
+                   bitRate="50000000"
+                   width="2560"
+                   height="1440"
+                   frameRate="30" />
+            <Audio codec="aac"
+                   bitRate="256000"
+                   sampleRate="48000"
+                   channels="2" />
+        </EncoderProfile>
         <EncoderProfile quality="timelapselow" fileFormat="mp4" duration="30">
             <Video codec="h263"
                    bitRate="1000000"
@@ -985,6 +1008,28 @@
                    bitRate="9000000"
                    width="1280"
                    height="720"
+                   frameRate="30" />
+            <Audio codec="aac"
+                   bitRate="256000"
+                   sampleRate="48000"
+                   channels="2" />
+        </EncoderProfile>
+        <EncoderProfile quality="1080p" fileFormat="mp4" duration="30">
+            <Video codec="h264"
+                   bitRate="20000000"
+                   width="1920"
+                   height="1080"
+                   frameRate="30" />
+            <Audio codec="aac"
+                   bitRate="256000"
+                   sampleRate="48000"
+                   channels="2" />
+        </EncoderProfile>
+        <EncoderProfile quality="qhd" fileFormat="mp4" duration="30">
+            <Video codec="h264"
+                   bitRate="50000000"
+                   width="2560"
+                   height="1440"
                    frameRate="30" />
             <Audio codec="aac"
                    bitRate="256000"
@@ -1627,7 +1672,7 @@
          or query the capabilities of the codec at all if it is disabled
     -->
     <VideoEncoderCap name="h264" enabled="true"
-        minBitRate="64000" maxBitRate="17000000"
+        minBitRate="64000" maxBitRate="20000000"
         minFrameWidth="176" maxFrameWidth="1920"
         minFrameHeight="144" maxFrameHeight="1080"
         minFrameRate="15" maxFrameRate="30" />
@@ -1642,9 +1687,9 @@
         minFrameHeight="144" maxFrameHeight="480"
         minFrameRate="15" maxFrameRate="30" />
     <VideoEncoderCap name="hevc" enabled="true"
-        minBitRate="64000" maxBitRate="256000"
-        minFrameWidth="176" maxFrameWidth="1920"
-        minFrameHeight="144" maxFrameHeight="1080"
+        minBitRate="64000" maxBitRate="60000000"
+        minFrameWidth="176" maxFrameWidth="2560"
+        minFrameHeight="144" maxFrameHeight="1440"
         minFrameRate="15" maxFrameRate="30" />
     <AudioEncoderCap name="aac" enabled="true"
         minBitRate="758" maxBitRate="288000"
@@ -1666,6 +1711,7 @@
         minBitRate="5525" maxBitRate="12200"
         minSampleRate="8000" maxSampleRate="8000"
         minChannels="1" maxChannels="1" />
+  <!--L19 code for 162636 by p-zhangyuhang3 at 11.16 end-->
     <!--
         FIXME:
         We do not check decoder capabilities at present
