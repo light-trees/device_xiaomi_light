@@ -9,7 +9,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit some common Pixel Experience stuff.
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Inherit from light device
 $(call inherit-product, device/xiaomi/light/device.mk)
@@ -19,7 +19,7 @@ TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_SUPPORTS_QUICK_TAP := true
 
 # Device identifier. This must come after all inclusions
-PRODUCT_NAME := aosp_light
+PRODUCT_NAME := lineage_light
 PRODUCT_DEVICE := light
 PRODUCT_MANUFACTURER := xiaomi
 PRODUCT_BRAND := Redmi
