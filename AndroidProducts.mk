@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_light.mk
+    $(LOCAL_DIR)/lineage_light.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_light-user \
-    aosp_light-userdebug \
-    aosp_light-eng
+    lineage_light-user \
+    lineage_light-userdebug \
+    lineage_light-eng
