@@ -94,7 +94,7 @@ TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image.gz
 TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
 
-TARGET_KERNEL_SOURCE := kernel/xiaomi/light
+TARGET_KERNEL_SOURCE := $(DEVICE_PATH)/prebuilt
 TARGET_KERNEL_CONFIG := light_defconfig
 TARGET_FORCE_PREBUILT_KERNEL := true
 
