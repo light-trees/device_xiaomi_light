@@ -16,6 +16,9 @@ $(call inherit-product, vendor/xiaomi/light/light-vendor.mk)
 # Project ID Quota
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
+# Dalvik VM Configuration
+$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
+
 # Silence vendor logspam
 include $(LOCAL_PATH)/configs/props/vendor_logtags.mk
 
