@@ -2355,10 +2355,6 @@ vendor/lib64/vendor.mediatek.hardware.pq@2.8.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.9.so
 vendor/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 
-# NFC
-vendor/etc/libnfc-nci.conf
-vendor/lib64/libnxp_extamp_intf.so
-
 # Power
 vendor/lib/hw/power.default.so
 -vendor/lib/libpowerhal.so
@@ -2367,10 +2363,6 @@ vendor/lib64/hw/power.default.so
 
 # Radio
 vendor/lib/libvsim.so
-
-# Secure Element
-vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek
-vendor/lib64/vendor.mediatek.hardware.mtkradioex@2.0.so
 
 # Sensors
 vendor/lib64/hw/sensors.mt6833.so
