@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/xiaomi/everpal
+DEVICE_PATH := device/xiaomi/light
 
 # A/B
 AB_OTA_UPDATER := true
@@ -59,11 +59,10 @@ BOARD_AVB_VBMETA_VENDOR_ROLLBACK_INDEX_LOCATION := 3
 DEXPREOPT_GENERATE_APEX_IMAGE := true
 
 # Assert
-TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
-TARGET_OTA_ASSERT_DEVICE := evergo,evergreen,everpal,opal
+TARGET_OTA_ASSERT_DEVICE := light
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := everpal
+TARGET_BOOTLOADER_BOARD_NAME := light
 TARGET_NO_BOOTLOADER := true
 
 # Build
@@ -76,8 +75,8 @@ BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
 TARGET_SCREEN_DENSITY := 440
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_everpal
-TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_everpal
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_light
+TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_light
 
 # Kernel
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
@@ -95,12 +94,12 @@ BOARD_DTB_OFFSET := 0x07c08000
 BOARD_BOOT_HEADER_VERSION := 2
 BOARD_KERNEL_SEPARATED_DTBO := true
 
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image.gz
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
 TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
 
-TARGET_KERNEL_SOURCE := kernel/xiaomi/everpal
-TARGET_KERNEL_CONFIG := evergo_defconfig
+TARGET_KERNEL_SOURCE := kernel/xiaomi/light
+TARGET_KERNEL_CONFIG := light_defconfig
 TARGET_FORCE_PREBUILT_KERNEL := true
 
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
@@ -121,7 +120,7 @@ ODM_MANIFEST_NFC_FILES := $(DEVICE_PATH)/configs/nfc/manifest_nfc.xml
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072
-BOARD_BOOTIMAGE_PARTITION_SIZE := 134217728
+BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
 BOARD_DTBOIMG_PARTITION_SIZE := 8388608
 
 BOARD_SUPER_PARTITION_SIZE := 9126805504
@@ -145,8 +144,8 @@ BOARD_VENDOR := xiaomi
 TARGET_BOARD_PLATFORM := mt6833
 
 # Properties
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
-TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/configs/props/system.prop
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/configs/props/vendor.prop
 
 # Recovery
 BOARD_USES_RECOVERY_AS_BOOT := true
@@ -171,9 +170,9 @@ TARGET_COPY_OUT_ODM := odm
 VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 
 # Vintf
-DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
-DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(DEVICE_PATH)/framework_compatibility_matrix.xml
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/vintf/manifest.xml
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/vintf/compatibility_matrix.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(DEVICE_PATH)/configs/vintf/framework_compatibility_matrix.xml
 
 # VNDK
 BOARD_VNDK_VERSION := current
@@ -185,4 +184,4 @@ WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 
 # Inherit the proprietary files
-include vendor/xiaomi/everpal/BoardConfigVendor.mk
+include vendor/xiaomi/light/BoardConfigVendor.mk

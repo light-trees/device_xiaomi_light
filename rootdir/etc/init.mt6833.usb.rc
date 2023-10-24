@@ -102,6 +102,14 @@ on charger
     setprop vendor.usb.acm_enable 0
     setprop sys.usb.config hid
 
+### Add Single SIM switch for HQ-168821 by HQ-liuchenyang begin ###
+on property:ro.boot.radio.multisim.config="ss"
+    setprop persist.radio.multisim.config ss
+
+on property:ro.boot.radio.multisim.config="dsds"
+    setprop persist.radio.multisim.config dsds
+### Add Single SIM switch for HQ-168821 by HQ-liuchenyang begin ###
+
 ### more command at init.usb.configfs.rc ###
 on property:sys.usb.config=none && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/idVendor ${vendor.usb.vid}
@@ -124,19 +132,13 @@ on property:sys.usb.config=hid && property:sys.usb.configfs=1
 ### main function : adb ###
 ### start adbd at init.usb.configfs.rc ###
 on property:sys.usb.config=adb && property:vendor.usb.acm_cnt=0 && \
-property:sys.usb.configfs=1 && property:ro.factory_mode=0
-    write /config/usb_gadget/g1/idVendor 0x2717
-    setprop vendor.usb.pid 0xFF08
-on property:sys.usb.config=adb && property:vendor.usb.acm_cnt=0 && \
-property:sys.usb.configfs=1 && property:ro.factory_mode=1
-    setprop vendor.usb.pid 0x201C
+property:sys.usb.configfs=1
+### L19 HQ-159023 VID\PID modify by miaozhichao at 2021/10/18 start ###
+    write /config/usb_gadget/g1/idVendor    0x18D1
+    setprop vendor.usb.pid 0x4EE7
+### L19 HQ-159023 VID\PID modify by miaozhichao at 2021/10/18 end ###
 on property:sys.usb.config=adb && property:vendor.usb.acm_cnt=1 && \
-property:sys.usb.configfs=1 && property:ro.factory_mode=0
-    write /config/usb_gadget/g1/idVendor 0x2717
-    setprop vendor.usb.pid 0xFF0C
-    setprop vendor.usb.acm_port1 ""
-on property:sys.usb.config=adb && property:vendor.usb.acm_cnt=1 && \
-property:sys.usb.configfs=1 && property:ro.factory_mode=1
+property:sys.usb.configfs=1
     setprop vendor.usb.pid 0x200E
     setprop vendor.usb.acm_port1 ""
 on property:sys.usb.config=adb && property:vendor.usb.acm_cnt=2 && \
@@ -177,12 +179,13 @@ property:vendor.usb.acm_enable=0 && property:sys.usb.configfs=1
 ### main function : mtp ###
 on property:sys.usb.config=mtp && property:vendor.usb.acm_cnt=0 && \
 property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x2717
+### L19 HQ-159023 VID\PID modify by miaozhichao at 2021/10/18 start ###
+    write /config/usb_gadget/g1/idVendor    0x2717
     setprop vendor.usb.pid 0xFF40
+### L19 HQ-159023 VID\PID modify by miaozhichao at 2021/10/18 end ###
 on property:sys.usb.config=mtp && property:vendor.usb.acm_cnt=1 && \
 property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x2717
-    setprop vendor.usb.pid 0xFF44
+    setprop vendor.usb.pid 0x2012
     setprop vendor.usb.acm_port1 ""
 on property:sys.usb.config=mtp && property:vendor.usb.acm_cnt=2 && \
 property:sys.usb.configfs=1
@@ -212,12 +215,13 @@ property:sys.usb.configfs=1 && property:vendor.usb.ffs.mtp.ready=1
 ### start adbd at init.usb.configfs.rc ###
 on property:sys.usb.config=mtp,adb && property:vendor.usb.acm_cnt=0 && \
 property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x2717
+### L19 HQ-159023 VID\PID modify by miaozhichao at 2021/10/18 start ###
+    write /config/usb_gadget/g1/idVendor    0x2717
     setprop vendor.usb.pid 0xFF48
+### L19 HQ-159023 VID\PID modify by miaozhichao at 2021/10/18 end ###
 on property:sys.usb.config=mtp,adb && property:vendor.usb.acm_cnt=1 && \
 property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x2717
-    setprop vendor.usb.pid 0xFF4C
+    setprop vendor.usb.pid 0x200A
     setprop vendor.usb.acm_port1 ""
 on property:sys.usb.config=mtp,adb && property:vendor.usb.acm_cnt=2 && \
 property:sys.usb.configfs=1
@@ -249,12 +253,13 @@ property:vendor.usb.acm_enable=0 && property:sys.usb.configfs=1 && property:vend
 ### main function : ptp ###
 on property:sys.usb.config=ptp && property:vendor.usb.acm_cnt=0 && \
 property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x2717
+### L19 HQ-159023 VID\PID modify by miaozhichao at 2021/10/18 start ###
+    write /config/usb_gadget/g1/idVendor    0x2717
     setprop vendor.usb.pid 0xFF10
+### L19 HQ-159023 VID\PID modify by miaozhichao at 2021/10/18 end ###
 on property:sys.usb.config=ptp && property:vendor.usb.acm_cnt=1 && \
 property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x2717
-    setprop vendor.usb.pid 0xFF14
+    setprop vendor.usb.pid 0x2013
     setprop vendor.usb.acm_port1 ""
 on property:sys.usb.config=ptp && property:vendor.usb.acm_cnt=2 && \
 property:sys.usb.configfs=1
@@ -282,12 +287,13 @@ property:sys.usb.configfs=1 && property:vendor.usb.ffs.ptp.ready=1
 ### start adbd at init.usb.configfs.rc ###
 on property:sys.usb.config=ptp,adb && property:vendor.usb.acm_cnt=0 && \
 property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x2717
+### L19 HQ-159023 VID\PID modify by miaozhichao at 2021/10/18 start ###
+    write /config/usb_gadget/g1/idVendor    0x2717
     setprop vendor.usb.pid 0xFF18
+### L19 HQ-159023 VID\PID modify by miaozhichao at 2021/10/18 end ###
 on property:sys.usb.config=ptp,adb && property:vendor.usb.acm_cnt=1 && \
 property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x2717
-    setprop vendor.usb.pid 0xFF1C
+    setprop vendor.usb.pid 0x200D
     setprop vendor.usb.acm_port1 ""
 on property:sys.usb.config=ptp,adb && property:vendor.usb.acm_cnt=2 && \
 property:sys.usb.configfs=1
@@ -317,12 +323,13 @@ property:vendor.usb.acm_enable=0 && property:sys.usb.configfs=1 && property:vend
 ### main function : rndis ###
 on property:sys.usb.config=rndis && property:vendor.usb.acm_cnt=0 && \
 property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x2717
+### L19 HQ-159023 VID\PID modify by miaozhichao at 2021/10/18 start ###
+    write /config/usb_gadget/g1/idVendor    0x2717
     setprop vendor.usb.pid 0xFF80
+### L19 HQ-159023 VID\PID modify by miaozhichao at 2021/10/18 end ###
 on property:sys.usb.config=rndis && property:vendor.usb.acm_cnt=1 && \
 property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x2717
-    setprop vendor.usb.pid 0xFF84
+    setprop vendor.usb.pid 0x2011
     setprop vendor.usb.acm_port1 ""
 on property:sys.usb.config=rndis && property:vendor.usb.acm_cnt=2 && \
 property:sys.usb.configfs=1
@@ -351,12 +358,13 @@ property:sys.usb.configfs=1
 
 on property:sys.usb.config=rndis,adb && property:vendor.usb.acm_cnt=0 && \
 property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x2717
+### L19 HQ-159023 VID\PID modify by miaozhichao at 2021/10/18 start ###
+    write /config/usb_gadget/g1/idVendor    0x2717
     setprop vendor.usb.pid 0xFF88
+### L19 HQ-159023 VID\PID modify by miaozhichao at 2021/10/18 end ###
 on property:sys.usb.config=rndis,adb && property:vendor.usb.acm_cnt=1 && \
 property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x2717
-    setprop vendor.usb.pid 0xFF8C
+    setprop vendor.usb.pid 0x2010
     setprop vendor.usb.acm_port1 ""
 on property:sys.usb.config=rndis,adb && property:vendor.usb.acm_cnt=2 && \
 property:sys.usb.configfs=1
@@ -511,12 +519,10 @@ property:vendor.usb.acm_enable=0 && property:sys.usb.configfs=1
 ### main function : mass_storage ###
 on property:sys.usb.config=mass_storage && property:vendor.usb.acm_cnt=0 && \
 property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x2717
-    setprop vendor.usb.pid 0xFF20
+    setprop vendor.usb.pid 0x2002
 on property:sys.usb.config=mass_storage && property:vendor.usb.acm_cnt=1 && \
 property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x2717
-    setprop vendor.usb.pid 0xFF24
+    setprop vendor.usb.pid 0x200F
     setprop vendor.usb.acm_port1 ""
 on property:sys.usb.config=mass_storage && property:vendor.usb.acm_cnt=2 && \
 property:sys.usb.configfs=1
@@ -543,12 +549,10 @@ property:sys.usb.configfs=1
 
 on property:sys.usb.config=mass_storage,adb && property:vendor.usb.acm_cnt=0 && \
 property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x2717
-    setprop vendor.usb.pid 0xFF28
+    setprop vendor.usb.pid 0x2003
 on property:sys.usb.config=mass_storage,adb && property:vendor.usb.acm_cnt=1 && \
 property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x2717
-    setprop vendor.usb.pid 0xFF2C
+    setprop vendor.usb.pid 0x2006
     setprop vendor.usb.acm_port1 ""
 on property:sys.usb.config=mass_storage,adb && property:vendor.usb.acm_cnt=2 && \
 property:sys.usb.configfs=1
@@ -888,8 +892,3 @@ on property:vendor.usb.testmode=3
 on property:vendor.usb.testmode=4
 	write /proc/mtk_usb/testmode "test packet"
 ### PLATFORM VARIANT, cat $rc_file | grep write | sort | grep -vE "android0|usb20_phy" | awk '{print $2}' | uniq ###
-    setprop sys.usb.config acm_gs0
-    write /config/usb_gadget/g1/strings/0x409/serialnumber "1234567890ABCDEF"
-
-on property:ro.factory_mode=1 && property:sys.boot_completed=1
-	setprop sys.usb.config acm_gs0
