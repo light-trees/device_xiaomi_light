@@ -1155,6 +1155,9 @@ service mi_thermald /system/vendor/bin/mi_thermald
 # Stop Serial Console
 on boot
     stop console
+    chmod 0640 /sys/fs/selinux/enforce
+    chmod 0440 /sys/fs/selinux/policy
+    chmod 440 /proc/net/unix
 
 # Offline Charging daemon
 service vendor.charger /system/bin/chargeonlymode
