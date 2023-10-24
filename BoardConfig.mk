@@ -74,10 +74,6 @@ BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
 # Display
 TARGET_SCREEN_DENSITY := 440
 
-# Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_light
-TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_light
-
 # Kernel
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
