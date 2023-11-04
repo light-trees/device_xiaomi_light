@@ -7,8 +7,13 @@
 # Install developer gsi keys into the ramdisk, to boot a developer GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 
+
 # Virtual A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
+
+# Apex
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+OVERRIDE_PRODUCT_COMPRESSED_APEX := false
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/xiaomi/light/light-vendor.mk)
