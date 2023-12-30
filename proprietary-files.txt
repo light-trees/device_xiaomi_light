@@ -2362,16 +2362,12 @@ vendor/lib64/hw/power.default.so
 # Radio
 vendor/lib/libvsim.so
 
+
 # Sensors
 vendor/lib/sensors.touch.detect.so
 vendor/lib64/hw/sensors.mt6833.so
 vendor/lib64/libsensor_custom.so
-<<<<<<< HEAD
-vendor/lib/libsensorndkbridge.so
-vendor/lib64/libsensorndkbridge.so
-=======
 vendor/lib64/sensors.touch.detect.so
->>>>>>> 1b22453 (light: Update blobs from `V14.0.3.0.TLSMIXM`)
 
 # Soter
 -vendor/app/SoterService/SoterService.apk:system_ext/app/SoterService/SoterService.apk
@@ -2960,9 +2956,7 @@ vendor/etc/security/cacerts_supl/3ad48a91.0
 vendor/etc/security/cacerts_supl/7651b327.0
 vendor/etc/security/cacerts_supl/c542733d.0
 vendor/etc/security/cacerts_supl/cec771d5.0
-vendor/etc/security/cacerts_supl/f336e3d1.0
-<<<<<<< HEAD
-=======
+
 vendor/etc/voicecommand/training/ubmfile/keyword02/hhaa/p2.3/bkd
 vendor/etc/voicecommand/training/ubmfile/keyword02/hhaa/p2.3/model.bin
 vendor/etc/voicecommand/training/ubmfile/keyword02/hhaa/p2.3/nl
@@ -3025,7 +3019,7 @@ vendor/etc/voicecommand/training/ubmfile/keyword02/hhaa/supplement/nl.use_pcm
 vendor/etc/voicecommand/training/ubmfile/keyword02/hhaa/supplement/nl.use_xor
 vendor/etc/voicecommand/training/ubmfile/keyword02/README.txt
 vendor/etc/voicecommand/training/ubmfile/keyword02/keyphrase.xml
->>>>>>> 1b22453 (light: Update blobs from `V14.0.3.0.TLSMIXM`)
+
 vendor/etc/AbnormalDisplayLog_dynamic.xml
 vendor/etc/AudioLog_dynamic.xml
 vendor/etc/MNL_Config.xml
