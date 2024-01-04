@@ -1,8 +1,3 @@
-# Remove Existing Repos
-rm -rf vendor/xiaomi/light
-rm -rf hardware/xiaomi
-rm -rf hardware/mediatek
-rm -rf device/mediatek/sepolicy_vndr
 
 # Clone Repos
 git clone https://github.com/Poco-MT6833/vendor_xiaomi_light vendor/xiaomi/light
