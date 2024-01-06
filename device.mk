@@ -297,10 +297,11 @@ PRODUCT_COPY_FILES += \
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service-mediatek \
-    android.hardware.power-V2-ndk.vendor:64 \
-    android.hardware.power@1.2.vendor:64 \
+    android.hardware.power@1.3.vendor
+    
+PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.mtkpower@1.2.vendor
-
+    
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/perf/power_app_cfg.xml:$(TARGET_COPY_OUT_VENDOR)/etc/power_app_cfg.xml \
     $(LOCAL_PATH)/configs/perf/powercontable.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powercontable.xml \
