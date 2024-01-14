@@ -113,6 +113,9 @@ function blob_fixup {
         vendor/lib64/mediadrm/libwvdrmengine.so)
             "${PATCHELF}" --replace-needed "libprotobuf-cpp-lite-3.9.1.so" "libprotobuf-cpp-full-3.9.1.so" "${2}"
             ;;
+        vendor/bin/hw/android.hardware.thermal@2.0-service.mtk)
+            "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
+            ;;
         vendor/bin/hw/vendor.mediatek.hardware.pq@2.2-service)
             "$PATCHELF" --replace-needed "libutils.so" "libutils-v32.so" "$2"
     esac
