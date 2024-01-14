@@ -90,6 +90,7 @@ function blob_fixup {
         "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
         ;;
     vendor/bin/hw/camerahalserver)
+        "${PATCHELF}" --add-needed "libbinder-v32.so" "${2}"
         "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
         ;;
     vendor/lib64/hw/android.hardware.camera.provider@2.6-impl-mediatek.so)
