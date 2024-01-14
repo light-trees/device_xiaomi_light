@@ -118,7 +118,9 @@ function blob_fixup {
             "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
             ;;
         vendor/bin/hw/vendor.mediatek.hardware.pq@2.2-service)
-            "$PATCHELF" --replace-needed "libutils.so" "libutils-v32.so" "$2"
+        "${PATCHELF}" --add-needed "libbinder-v32.so" "${2}"
+        "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
+        "$PATCHELF" --replace-needed "libutils.so" "libutils-v32.so" "$2"
     esac
 }
 
